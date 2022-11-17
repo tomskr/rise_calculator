@@ -1,12 +1,15 @@
 package pl.tomskr.rise_calculator.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Rise {
     
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long Id;
     
     private Long riseLevel;
@@ -18,6 +21,25 @@ public class Rise {
     private Long intelligenceIncrease;
     private Long wisdomIncrease;
     private Long charismaIncrease;
+
+    public Rise() {
+    }
+
+    public Rise(Long riseLevel, String riseDescription) {
+        this.riseLevel = riseLevel;
+        this.riseDescription = riseDescription;
+    }
+
+    public Rise(Long riseLevel, String riseDescription, Long strengthIncrease, Long dexterityIncrease, Long constitutionIncrease, Long intelligenceIncrease, Long wisdomIncrease, Long charismaIncrease) {
+        this.riseLevel = riseLevel;
+        this.riseDescription = riseDescription;
+        this.strengthIncrease = strengthIncrease;
+        this.dexterityIncrease = dexterityIncrease;
+        this.constitutionIncrease = constitutionIncrease;
+        this.intelligenceIncrease = intelligenceIncrease;
+        this.wisdomIncrease = wisdomIncrease;
+        this.charismaIncrease = charismaIncrease;
+    }
 
     public Long getId() {
         return Id;
