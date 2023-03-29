@@ -50,6 +50,20 @@ public class RiseService implements IRiseService {
         ).findFirst();
     }
 
+    @Override
+    public void deleteByRiseLevel(Long riseLevel) {
+        riseList.remove(riseLevel);
+    }
+
+
+    @Override
+    public Rise save(Rise rise) {
+        if((riseList.get(riseList.size()-1).getRiseLevel() + 1) == rise.getRiseLevel()){
+        riseList.add(rise);
+        }
+        return rise;
+    }
+
 
     private Rise addRises(Rise main, Rise addition){
         main.setStrengthIncrease(main.getStrengthIncrease() + addition.getStrengthIncrease());

@@ -10,6 +10,8 @@ public interface IRiseService {
     List<Rise> sumAll();
 
     Optional<Rise> findRiseByLevel(Long riseLevel);
+    void deleteByRiseLevel(Long riseLevel);
 
+    Rise save(Rise rise);
 
 }
