@@ -111,4 +111,15 @@ public class Rise {
 //    public void setCharismaIncrease(Long charismaIncrease) {
 //        this.charismaIncrease = charismaIncrease;
 //    }
+
+
+    @Override
+    public String toString() {
+        return "Rise{" +
+                "Id=" + Id +
+                ", riseLevel=" + riseLevel +
+                ", riseDescription='" + riseDescription + '\'' +
+                ", strengthIncrease=" + strengthIncrease +
+                '}';
+    }
 }

@@ -19,7 +19,7 @@ import java.util.Optional;
 @RestController
 public class StatisticsController {
 
-    //private final Logger log = LoggerFactory.getLogger(StatisticsController.class);
+    private final Logger log = LoggerFactory.getLogger(StatisticsController.class);
     private final IRiseService riseService;
 
     public StatisticsController(IRiseService riseService){
@@ -39,7 +39,9 @@ public class StatisticsController {
     ResponseEntity<?> getRise(@PathVariable Long level) {
 
         Optional<Rise> rise= riseService.findRiseByLevel(level);
-
+        System.out.println(
+                rise.get().toString()
+        );
         return rise.map(response -> ResponseEntity.ok().body(response))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }

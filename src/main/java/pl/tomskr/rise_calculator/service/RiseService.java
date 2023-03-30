@@ -2,6 +2,7 @@ package pl.tomskr.rise_calculator.service;
 
 import org.springframework.stereotype.Service;
 import pl.tomskr.rise_calculator.model.Rise;
+import pl.tomskr.rise_calculator.repositories.RiseRepository;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -12,16 +13,14 @@ import java.util.stream.Collectors;
 @Service
 public class RiseService implements IRiseService {
 
+    RiseRepository riseRepository;
     private static List<Rise> riseList = new ArrayList<>();
     private static List<Rise> sumList = new ArrayList<>();
 
-    static {
-        riseList.clear();
-        riseList.add(new Rise((long) 1,"First Rise" ,(long) 10));
-        riseList.add(new Rise((long) 2,"Second Rise",(long) 10));
-        riseList.add(new Rise((long) 3,"Third Rise",(long) 10));
-        riseList.add(new Rise((long) 4,"Forth Rise",(long) 10));
+    public RiseService(RiseRepository riseRepository) {
+        this.riseRepository = riseRepository;
     }
+
 
     //list all stat increases
     @Override
