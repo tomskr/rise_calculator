@@ -19,6 +19,11 @@ public class RiseService implements IRiseService {
 
     public RiseService(RiseRepository riseRepository) {
         this.riseRepository = riseRepository;
+        riseList.clear();
+        riseList.add(new Rise((long) 1,"First Rise" ,(long) 10));
+        riseList.add(new Rise((long) 2,"Second Rise",(long) 11));
+        riseList.add(new Rise((long) 3,"Third Rise",(long) 12));
+        riseList.add(new Rise((long) 4,"Forth Rise",(long) 13));
     }
 
 
@@ -44,6 +49,7 @@ public class RiseService implements IRiseService {
 
     @Override
     public Optional<Rise> findRiseByLevel(Long riseLevel) {
+        //return riseRepository.
         return riseList.stream().filter(
                 sample -> sample.getRiseLevel().equals(riseLevel)
         ).findFirst();
