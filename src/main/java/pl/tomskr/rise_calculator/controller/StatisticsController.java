@@ -44,6 +44,7 @@ public class StatisticsController {
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
+    
     /*create next rise in sequence*/
     //todo: hooks read wrong walues repair
     @PostMapping("/rise")
@@ -53,6 +54,7 @@ public class StatisticsController {
                 .body(result);
     }
 
+
     /*Upgrade value of existing rises*/
     //todo: update save command
     @PutMapping("/rise/{riseLevel}")
@@ -60,6 +62,7 @@ public class StatisticsController {
         Rise result = riseService.save(rise);
         return ResponseEntity.ok().body(result);
     }
+
 
     /*delete existing rise entry*/
 //    @DeleteMapping("/rise/{riseLevel}"){

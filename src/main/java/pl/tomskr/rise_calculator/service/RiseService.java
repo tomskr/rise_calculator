@@ -17,10 +17,10 @@ public class RiseService implements IRiseService {
 
     static {
         riseList.clear();
-        riseList.add(new Rise((long) 1,"First Rise" ,(long) 10 ,(long) 10 ,(long) 10 ,(long) 10 ,(long) 10,(long) 10));
-        riseList.add(new Rise((long) 2,"Second Rise",(long) 10 ,(long) 11 ,(long) 10 ,(long) 10 ,(long) 10,(long) 10));
-        riseList.add(new Rise((long) 3,"Third Rise",(long) 10 ,(long) 12 ,(long) 10 ,(long) 10 ,(long) 10,(long) 10));
-        riseList.add(new Rise((long) 4,"Forth Rise",(long) 10 ,(long) 13 ,(long) 10 ,(long) 10 ,(long) 10,(long) 10));
+        riseList.add(new Rise((long) 1,"First Rise" ,(long) 10));
+        riseList.add(new Rise((long) 2,"Second Rise",(long) 10));
+        riseList.add(new Rise((long) 3,"Third Rise",(long) 10));
+        riseList.add(new Rise((long) 4,"Forth Rise",(long) 10));
     }
 
     //list all stat increases

@@ -20,11 +20,11 @@ public class Rise {
     private String riseDescription;
 
     private Long strengthIncrease;
-    private Long dexterityIncrease;
-    private Long constitutionIncrease;
-    private Long intelligenceIncrease;
-    private Long wisdomIncrease;
-    private Long charismaIncrease;
+//    private Long dexterityIncrease;
+//    private Long constitutionIncrease;
+//    private Long intelligenceIncrease;
+//    private Long wisdomIncrease;
+//    private Long charismaIncrease;
 
     public Rise() {
     }
@@ -34,15 +34,10 @@ public class Rise {
         this.riseDescription = riseDescription;
     }
 
-    public Rise(Long riseLevel, String riseDescription, Long strengthIncrease, Long dexterityIncrease, Long constitutionIncrease, Long intelligenceIncrease, Long wisdomIncrease, Long charismaIncrease) {
+    public Rise(Long riseLevel, String riseDescription, Long strengthIncrease) {
         this.riseLevel = riseLevel;
         this.riseDescription = riseDescription;
         this.strengthIncrease = strengthIncrease;
-        this.dexterityIncrease = dexterityIncrease;
-        this.constitutionIncrease = constitutionIncrease;
-        this.intelligenceIncrease = intelligenceIncrease;
-        this.wisdomIncrease = wisdomIncrease;
-        this.charismaIncrease = charismaIncrease;
     }
 
     public Long getId() {
@@ -77,43 +72,43 @@ public class Rise {
         this.strengthIncrease = strengthIncrease;
     }
 
-    public Long getDexterityIncrease() {
-        return dexterityIncrease;
-    }
-
-    public void setDexterityIncrease(Long dexterityIncrease) {
-        this.dexterityIncrease = dexterityIncrease;
-    }
-
-    public Long getConstitutionIncrease() {
-        return constitutionIncrease;
-    }
-
-    public void setConstitutionIncrease(Long constitutionIncrease) {
-        this.constitutionIncrease = constitutionIncrease;
-    }
-
-    public Long getIntelligenceIncrease() {
-        return intelligenceIncrease;
-    }
-
-    public void setIntelligenceIncrease(Long intelligenceIncrease) {
-        this.intelligenceIncrease = intelligenceIncrease;
-    }
-
-    public Long getWisdomIncrease() {
-        return wisdomIncrease;
-    }
-
-    public void setWisdomIncrease(Long wisdomIncrease) {
-        this.wisdomIncrease = wisdomIncrease;
-    }
-
-    public Long getCharismaIncrease() {
-        return charismaIncrease;
-    }
-
-    public void setCharismaIncrease(Long charismaIncrease) {
-        this.charismaIncrease = charismaIncrease;
-    }
+//    public Long getDexterityIncrease() {
+//        return dexterityIncrease;
+//    }
+//
+//    public void setDexterityIncrease(Long dexterityIncrease) {
+//        this.dexterityIncrease = dexterityIncrease;
+//    }
+//
+//    public Long getConstitutionIncrease() {
+//        return constitutionIncrease;
+//    }
+//
+//    public void setConstitutionIncrease(Long constitutionIncrease) {
+//        this.constitutionIncrease = constitutionIncrease;
+//    }
+//
+//    public Long getIntelligenceIncrease() {
+//        return intelligenceIncrease;
+//    }
+//
+//    public void setIntelligenceIncrease(Long intelligenceIncrease) {
+//        this.intelligenceIncrease = intelligenceIncrease;
+//    }
+//
+//    public Long getWisdomIncrease() {
+//        return wisdomIncrease;
+//    }
+//
+//    public void setWisdomIncrease(Long wisdomIncrease) {
+//        this.wisdomIncrease = wisdomIncrease;
+//    }
+//
+//    public Long getCharismaIncrease() {
+//        return charismaIncrease;
+//    }
+//
+//    public void setCharismaIncrease(Long charismaIncrease) {
+//        this.charismaIncrease = charismaIncrease;
+//    }
 }
