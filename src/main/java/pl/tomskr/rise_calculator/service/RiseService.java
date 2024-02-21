@@ -4,75 +4,68 @@ import org.springframework.stereotype.Service;
 import pl.tomskr.rise_calculator.model.Rise;
 import pl.tomskr.rise_calculator.repositories.RiseRepository;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
 public class RiseService implements IRiseService {
 
     RiseRepository riseRepository;
-    private static List<Rise> riseList = new ArrayList<>();
-    private static List<Rise> sumList = new ArrayList<>();
 
     public RiseService(RiseRepository riseRepository) {
         this.riseRepository = riseRepository;
-        riseList.clear();
-        riseList.add(new Rise((long) 1,"First Rise" ,(long) 10));
-        riseList.add(new Rise((long) 2,"Second Rise",(long) 11));
-        riseList.add(new Rise((long) 3,"Third Rise",(long) 12));
-        riseList.add(new Rise((long) 4,"Forth Rise",(long) 13));
+
     }
 
 
     //list all stat increases
     @Override
     public List<Rise> findAll() {
+        List<Rise> riseList = new ArrayList<>();
+        riseRepository.findAll().forEach(riseList::add);
         return riseList;
     }
 
     //show all rise stats
-    @Override
-    public List<Rise> sumAll() {
-        sumList.clear();
-        for (int i = 0; i< riseList.size(); i++){
-            System.out.println("index :  " + i);
-            if(i==0) sumList.add(riseList.get(i));
-            if(i!=0){
-                sumList.add(addRises(riseList.get(i),sumList.get(i-1)));
-            }
-        }
-        return sumList;
-    }
+//    @Override
+//    public List<Rise> sumAll() {
+//        sumList.clear();
+//        for (int i = 0; i< riseList.size(); i++){
+//            System.out.println("index :  " + i);
+//            if(i==0) sumList.add(riseList.get(i));
+//            if(i!=0){
+//                sumList.add(addRises(riseList.get(i),sumList.get(i-1)));
+//            }
+//        }
+//        return sumList;
+//    }
 
-    @Override
-    public Optional<Rise> findRiseByLevel(Long riseLevel) {
-        //return riseRepository.
-        return riseList.stream().filter(
-                sample -> sample.getRiseLevel().equals(riseLevel)
-        ).findFirst();
-    }
+//    @Override
+//    public Optional<Rise> findRiseByLevel(Long riseLevel) {
+//        //return riseRepository.
+//        return riseList.stream().filter(
+//                sample -> sample.getRiseLevel().equals(riseLevel)
+//        ).findFirst();
+//    }
 
-    @Override
-    public void deleteByRiseLevel(Long riseLevel) {
-        riseList.remove(riseLevel);
-    }
-
-
-    @Override
-    public Rise save(Rise rise) {
-        if((riseList.get(riseList.size()-1).getRiseLevel() + 1) == rise.getRiseLevel()){
-        riseList.add(rise);
-        }
-        return rise;
-    }
+//    @Override
+//    public void deleteByRiseLevel(Long riseLevel) {
+//        riseList.remove(riseLevel);
+//    }
 
 
-    private Rise addRises(Rise main, Rise addition){
-        main.setStrengthIncrease(main.getStrengthIncrease() + addition.getStrengthIncrease());
-        return main;
-    }
+//    @Override
+//    public Rise save(Rise rise) {
+//        if((riseList.get(riseList.size()-1).getRiseLevel() + 1) == rise.getRiseLevel()){
+//        riseList.add(rise);
+//        }
+//        return rise;
+//    }
+
+
+//    private Rise addRises(Rise main, Rise addition){
+//        main.setStrengthIncrease(main.getStrengthIncrease() + addition.getStrengthIncrease());
+//        return main;
+//    }
     //end show all rise stats
 }

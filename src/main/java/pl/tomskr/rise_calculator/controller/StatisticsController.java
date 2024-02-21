@@ -14,6 +14,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @CrossOrigin(origins = { "http://localhost:3000", "http://localhost:4200" })
 @RestController
@@ -31,39 +32,39 @@ public class StatisticsController {
      */
     @RequestMapping("/rises")
     public List<Rise> rises() {
-        return riseService.sumAll();
+        return riseService.findAll();
     }
 
     /*Find specific rise level*/
-    @GetMapping("/rise/{level}")
-    ResponseEntity<?> getRise(@PathVariable Long level) {
-
-        Optional<Rise> rise= riseService.findRiseByLevel(level);
-        System.out.println(
-                rise.get().toString()
-        );
-        return rise.map(response -> ResponseEntity.ok().body(response))
-                .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
-    }
+//    @GetMapping("/rise/{level}")
+//    ResponseEntity<?> getRise(@PathVariable Long level) {
+//
+//        Optional<Rise> rise= riseService.findRiseByLevel(level);
+//        System.out.println(
+//                rise.get().toString()
+//        );
+//        return rise.map(response -> ResponseEntity.ok().body(response))
+//                .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+//    }
 
     
     /*create next rise in sequence*/
     //todo: hooks read wrong walues repair
-    @PostMapping("/rise")
-    ResponseEntity<Rise> createRise(@Validated @RequestBody Rise rise) throws URISyntaxException {
-        Rise result = riseService.save(rise);
-        return ResponseEntity.created(new URI("/api/rise/" + result.getRiseLevel()))
-                .body(result);
-    }
+//    @PostMapping("/rise")
+//    ResponseEntity<Rise> createRise(@Validated @RequestBody Rise rise) throws URISyntaxException {
+//        Rise result = riseService.save(rise);
+//        return ResponseEntity.created(new URI("/api/rise/" + result.getRiseLevel()))
+//                .body(result);
+//    }
 
 
     /*Upgrade value of existing rises*/
     //todo: update save command
-    @PutMapping("/rise/{riseLevel}")
-    ResponseEntity<Rise> upgradeRise(@Validated @RequestBody Rise rise){
-        Rise result = riseService.save(rise);
-        return ResponseEntity.ok().body(result);
-    }
+//    @PutMapping("/rise/{riseLevel}")
+//    ResponseEntity<Rise> upgradeRise(@Validated @RequestBody Rise rise){
+//        Rise result = riseService.save(rise);
+//        return ResponseEntity.ok().body(result);
+//    }
 
 
     /*delete existing rise entry*/
